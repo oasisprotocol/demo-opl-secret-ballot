@@ -65,8 +65,8 @@ task('deploy-dao')
   .addParam('ballotBoxAddr')
   .setAction(async (args, hre) => {
     await hre.run('compile');
-    const DAOv1 = await hre.ethers.getContractFactory('DAOv1');
-    const dao = await DAOv1.deploy(args.ballotBoxAddr);
+    const DAOV1 = await hre.ethers.getContractFactory('DAOV1');
+    const dao = await DAOV1.deploy(args.ballotBoxAddr);
     await dao.deployed();
     console.log('DAO', dao.address);
     return dao;
